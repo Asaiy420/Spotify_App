@@ -17,6 +17,9 @@
     // Allow importing JSON files directly as modules.
     "resolveJsonModule": true,
     // Skip checking declaration files in `node_modules` to speed up compilation.
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "typeRoots": ["./node_modules/@types", "./types"],
+    
+
   }
 }
