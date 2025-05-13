@@ -1,8 +1,8 @@
 import { Router } from "express";
-import { SignUp } from "../controllers/auth.controller.js";
+import { Callback } from "../controllers/auth.controller.js";
 
 const router = Router();
 
-router.get("/sign-up", SignUp);
+router.post("/callback", Callback);
 
 export default router;
