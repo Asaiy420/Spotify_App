@@ -1,7 +1,7 @@
-import express, { Request, Response } from "express";
+import express, { Request, Response, NextFunction } from "express";
 import { User } from "../models/user.model.js";
 
-export const Callback = async (req: Request, res: Response): Promise<any> => {
+export const Callback = async (req: Request, res: Response, next:NextFunction): Promise<any> => {
   const { id, firstName, lastName, imageUrl } = req.body;
 
   try {
@@ -19,6 +19,6 @@ export const Callback = async (req: Request, res: Response): Promise<any> => {
     }
   } catch (error: any) {
     console.error("Error in callback auth :", error.message);
-    res.status(500).json({ error: "Internal server error" });
+    next(error); // Pass the error to the next middleware
   }
 };
