@@ -1,5 +1,16 @@
 import mongoose from "mongoose";
 
+export interface ISong extends Document {
+  title: string;
+  artist: string;
+  imageUrl: string;
+  audioUrl: string;
+  duration: number;
+  albumId?: mongoose.Types.ObjectId;
+  createdAt: Date;
+  updatedAt: Date;
+}
+
 const songSchema = new mongoose.Schema(
   {
     title: {
