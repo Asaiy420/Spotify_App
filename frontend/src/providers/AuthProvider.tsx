@@ -17,7 +17,7 @@ const AuthProvider = ({children}: AuthProviderProps) => {
         }
     }
 
-    const {getToken, userId} = useAuth(); 
+    const {getToken} = useAuth(); 
     const [loading, setLoading] = useState(true); 
 
     useEffect(() => {
